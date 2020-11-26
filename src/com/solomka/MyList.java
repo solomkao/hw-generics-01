@@ -8,13 +8,11 @@ public class MyList<T extends Number> {
     private List<T> list = new ArrayList<>();
 
     public void add(T element) {
-        if (this.list != null) {
-            this.list.add(element);
-        }
+        this.list.add(element);
     }
 
     public T getSmallest() {
-        if (list != null && this.list.size() > 0) {
+        if (this.list.size() > 0) {
             T[] newArray = this.list.toArray((T[]) new Number[0]);
             Arrays.sort(newArray);
             return newArray[0];
@@ -23,7 +21,7 @@ public class MyList<T extends Number> {
     }
 
     public T getLargest() {
-        if (list != null && this.list.size() > 0) {
+        if (this.list.size() > 0) {
             T[] newArray = this.list.toArray((T[]) new Number[0]);
             Arrays.sort(newArray);
             return newArray[newArray.length - 1];
@@ -32,10 +30,10 @@ public class MyList<T extends Number> {
     }
 
     public void display() {
-        if (this.list == null || this.list.size() == 0) {
+        if (this.list.size() == 0) {
             System.out.println("Empty list!");
         }
-        for (T t : list) {
+        for (T t : this.list) {
             System.out.print("[" + t + "] ");
         }
         System.out.println();

@@ -8,7 +8,7 @@ public class MyThirdList<T extends Comparable<T>> {
     }
 
     public T getHighest() {
-        if (this.array != null && this.array.length > 0) {
+        if (this.array.length > 0) {
             T element = this.array[0];
             for (int i = 0; i < this.array.length; i++) {
                 if (this.array[i].compareTo(element) >= 0) {
@@ -21,7 +21,7 @@ public class MyThirdList<T extends Comparable<T>> {
     }
 
     public T getLowest() {
-        if (this.array != null && this.array.length > 0) {
+        if (this.array.length > 0) {
             T element = this.array[0];
             for (int i = 0; i < this.array.length; i++) {
                 if (this.array[i].compareTo(element) <= 0) {
@@ -34,10 +34,10 @@ public class MyThirdList<T extends Comparable<T>> {
     }
 
     public void display() {
-        if (this.array == null || this.array.length == 0) {
+        if (this.array.length == 0) {
             System.out.println("Empty list!");
         }
-        for (T t : array) {
+        for (T t : this.array) {
             System.out.print("[" + t + "] ");
         }
         System.out.println();

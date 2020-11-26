@@ -7,20 +7,18 @@ public class MySecondList<T extends Comparable<T>> {
     private List<T> list = new ArrayList<>();
 
     public void add(T element) {
-        if (list != null) {
-            list.add(element);
-        }
+        this.list.add(element);
     }
 
     public T remove(int index) {
-        if (list != null && list.size() > index) {
-            return list.remove(index);
+        if (this.list.size() > index) {
+            return this.list.remove(index);
         }
         return null;
     }
 
     public T getSmallest() {
-        if (this.list != null && this.list.size() > 0) {
+        if (this.list.size() > 0) {
             T smallest = this.list.get(0);
             for (T element : this.list) {
                 if (smallest.compareTo(element) > 0) {
@@ -33,7 +31,7 @@ public class MySecondList<T extends Comparable<T>> {
     }
 
     public T getLargest() {
-        if (this.list != null && this.list.size() > 0) {
+        if (this.list.size() > 0) {
             T largest = this.list.get(0);
             for (T element : this.list) {
                 if (largest.compareTo(element) < 0) {
@@ -49,7 +47,7 @@ public class MySecondList<T extends Comparable<T>> {
         if (this.list == null || this.list.size() == 0) {
             System.out.println("Empty list!");
         }
-        for (T t : list) {
+        for (T t : this.list) {
             System.out.print("[" + t + "] ");
         }
         System.out.println();
